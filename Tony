@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mural Gamer - Tony</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f0f;
+      color: white;
+    }
+    header {
+      background-color: #111;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .tab {
+      padding: 0.5rem 1rem;
+      border: 1px solid #444;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #1f1f1f;
+    }
+    .tab.active {
+      background-color: crimson;
+      font-weight: bold;
+    }
+    .content {
+      display: none;
+      padding: 1rem;
+    }
+    .content.active {
+      display: block;
+    }
+    .card {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+    .tags {
+      margin-top: 0.5rem;
+    }
+    .tag {
+      display: inline-block;
+      background: #333;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mural Gamer de Tony</h1>
+    <p>Momentos marcantes das jornadas nos games</p>
+  </header>  <div class="tabs">
+    <div class="tab active" data-tab="mirage">Assassin's Creed Mirage</div>
+    <div class="tab" data-tab="tlou2">The Last of Us Parte II</div>
+  </div>  <div id="mirage" class="content active">
+    <div class="card">
+      <img src="/mnt/data/file-7SbFn87g74z4UaHEmYMEiS" alt="Mirage Final">
+      <div class="card-body">
+        <h2>Última Ação no Game</h2>
+        <p>Imagem feita no modo fotografia com edição personalizada no topo de Bagdá.</p>
+        <div class="tags">
+          <span class="tag">Final</span>
+          <span class="tag">Modo Foto</span>
+          <span class="tag">Basim</span>
+        </div>
+      </div>
+    </div>
+  </div>  <div id="tlou2" class="content">
+    <div class="card">
+      <img src="/mnt/data/file-8fUp1UtPm3mJifT5ef1WLJ" alt="TLOU Início">
+      <div class="card-body">
+        <h2>Início da Jornada</h2>
+        <p>Primeira imagem da nova jornada com Ellie. Início emocionante com vista do pôr do sol.</p>
+        <div class="tags">
+          <span class="tag">Início</span>
+          <span class="tag">Pôr do Sol</span>
+          <span class="tag">Cavalo</span>
+        </div>
+      </div>
+    </div>
+  </div>  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+  </script></body>
+</html>
